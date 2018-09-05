@@ -1,12 +1,19 @@
-
-<h1><i>Eat-Da-Burger!!!</i></h1>
+<div class="jumbotron">
+  <h1>Eat Da Burger</h1>
+</div>
 
 <h2>Available Burgers</h2>
 
 <ul>
-    {{#each burgers}}
+    {{#each burger}}
     {{#unless devoured}}
-    {{>burgers/burgers-block devoured=false}}
+
+    <p>
+    {{this.burger_name}}
+            <button data-id="{{this.id}}" class="devourBurger">Devour</button>
+            <button data-id="{{this.id}}" class="deleteBurger">Remove</button>
+    </p>
+    
     {{/unless}}
     {{/each}}
 </ul>
@@ -15,7 +22,10 @@
 <ul>
     {{#each burgers}}
     {{#if devoured}}
-    {{>burgers/burgers-block devoured=true}}
+    <p>
+            {{this.burger_name}}
+            <button data-id="{{this.id}}" class="deleteBurger">Remove</button>
+        </p>
     {{/if}}
     {{/each}}
 </ul>
@@ -32,4 +42,6 @@
   
 
   <button type="submit">Add Burger</button>
-</form>
+  </div>
+ <p>Enter a burger you would like to eat and click the "Add Burger" button.</p> 
+ </form>

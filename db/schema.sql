@@ -5,11 +5,10 @@ CREATE DATABASE burgers_db;
 USE burgers_db;
 
 
-CREATE TABLE burgers;
+CREATE TABLE burgers
 (
-id int NOT NULL AUTO_INCREMENT,
+id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 burger_name VARCHAR(255) NOT NULL,
-devoured boolean(2) NOT NULL,
+devoured boolean DEFAULT false
 
-PRIMARY KEY (id)
 );
